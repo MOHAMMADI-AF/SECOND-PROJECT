@@ -27,7 +27,7 @@ const orderSchema = mongoose.Schema(
       country: { type: String, required: true },
     },
     paymentMethod: {
-      type: Boolean,
+      type: String,
       required: true,
     },
     paymentResult: {
@@ -41,18 +41,18 @@ const orderSchema = mongoose.Schema(
       required: true,
       default: 0.0,
     },
-    shippingprice: {
+    shippingPrice: {
       type: Number,
       required: true,
       default: 0.0,
     },
-    totalprice: {
+    totalPrice: {
       type: Number,
       required: true,
       default: 0.0,
     },
     isPaid: {
-      type: Number,
+      type: Boolean,
       required: true,
       default: false,
     },
@@ -64,7 +64,7 @@ const orderSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    paidAt: {
+    deliveredAt: {
       type: Date,
     },
   },

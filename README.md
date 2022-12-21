@@ -1,5 +1,16 @@
 # The Project
 
+## This is a Rug Store (Second Project of Software Engineering Class at PER SCHOLAS TR28)
+
+### Features in this project
+
+- Full featured shopping cart
+- User profile with orders
+- Admin product management
+- Admin user management
+- Admin Order details page
+- Mark orders as delivered option
+
 ## This is a Per Scholas Software Engineering Class Second Project
 
 ### This Project could be called MERN Stack Full Form
@@ -42,6 +53,12 @@
 4.  To add
 
         This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# ---------------------------------------------------------------
+
+# The project created with (npx create-react-app my-app) below is the default Readme created with the app.
+
+# ---------------------------------------------------------------
 
 ## Available Scripts
 
