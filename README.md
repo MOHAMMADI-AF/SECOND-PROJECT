@@ -58,6 +58,8 @@
 
 # The project created with (npx create-react-app my-app) below is the default Readme created with the app.
 
+Read more here: https://reactjs.org/docs/create-a-new-react-app.html
+
 # ---------------------------------------------------------------
 
 ## Available Scripts
