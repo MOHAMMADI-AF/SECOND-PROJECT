@@ -11,8 +11,6 @@
 - Admin Order details page
 - Mark orders as delivered option
 
-## This is a Per Scholas Software Engineering Class Second Project
-
 ### This Project could be called MERN Stack Full Form
 
     MERN Stack is a compilation of four different technologies that work together to develop dynamic web apps and websites.
