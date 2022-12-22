@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +8,7 @@ import Loader from "../components/Loader";
 import { listUsers, deleteUser } from "../actions/userActions";
 
 const UserListScreen = ({ history }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const userList = useSelector((state) => state.userList);
@@ -22,9 +24,9 @@ const UserListScreen = ({ history }) => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers());
     } else {
-      history.push("/login");
+      navigate("/login");
     }
-  }, [dispatch, history, successDelete, userInfo]);
+  }, [dispatch, history, successDelete, userInfo]); //this line to be mentioned in video
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure")) {

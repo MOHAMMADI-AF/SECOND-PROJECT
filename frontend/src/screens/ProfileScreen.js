@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Table, Form, Button, Row, Col } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
-//import { listMyOrders } from '../actions/orderActions'
+import { listMyOrders } from "../actions/orderActions";
 import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
 
 const ProfileScreen = ({ location, history }) => {
@@ -27,22 +28,23 @@ const ProfileScreen = ({ location, history }) => {
   const { success } = userUpdateProfile;
 
   const orderListMy = useSelector((state) => state.orderListMy);
+  const navigate = useNavigate();
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
 
   useEffect(() => {
     if (!userInfo) {
-      history.push("/login");
+      navigate("/login");
     } else {
       if (!user || !user.name || success) {
         dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
-        //dispatch(listMyOrders());
+        dispatch(listMyOrders());
       } else {
         setName(user.name);
         setEmail(user.email);
       }
     }
-  }, [dispatch, history, userInfo, user, success]);
+  }, [dispatch, history, userInfo, user, success]); //this line to be mentioned in vedio
 
   const submitHandler = (e) => {
     e.preventDefault();

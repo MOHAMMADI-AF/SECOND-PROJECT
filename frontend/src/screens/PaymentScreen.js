@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
 import CheckoutSteps from "../components/CheckoutSteps";
@@ -16,11 +17,11 @@ const PaymentScreen = ({ history }) => {
   const [paymentMethod, setPaymentMethod] = useState("PayPal");
 
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));
-    history.push("/placeorder");
+    navigate("/placeorder");
   };
 
   return (

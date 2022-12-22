@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
@@ -9,7 +9,9 @@ import { getUserDetails, updateUser } from "../actions/userActions";
 import { USER_UPDATE_RESET } from "../constants/userConstants";
 
 const UserEditScreen = ({ match, history }) => {
-  const userId = match.params.id;
+  const { id } = useParams();
+  const userId = id;
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,7 +32,7 @@ const UserEditScreen = ({ match, history }) => {
   useEffect(() => {
     if (successUpdate) {
       dispatch({ type: USER_UPDATE_RESET });
-      history.push("/admin/userlist");
+      navigate("/admin/userlist");
     } else {
       if (!user.name || user._id !== userId) {
         dispatch(getUserDetails(userId));
