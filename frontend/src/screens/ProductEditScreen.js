@@ -53,7 +53,20 @@ const ProductEditScreen = ({ match, history }) => {
         setDescription(product.description);
       }
     }
-  }, [dispatch, history, productId, product, successUpdate]);
+  }, [
+    successUpdate,
+    dispatch,
+    navigate,
+    product.name,
+    product._id,
+    product.price,
+    product.image,
+    product.brand,
+    product.category,
+    product.countInStock,
+    product.description,
+    productId,
+  ]); //[dispatch, history, productId, product, successUpdate]
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
@@ -137,12 +150,12 @@ const ProductEditScreen = ({ match, history }) => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
-              <Form.File
+              <Form.Control
                 id="image-file"
                 label="Choose File"
                 custom
                 onChange={uploadFileHandler}
-              ></Form.File>
+              ></Form.Control>
               {uploading && <Loader />}
             </Form.Group>
 
