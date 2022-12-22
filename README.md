@@ -50,10 +50,6 @@
 
 3.  Using the bootstrap i have created the page layout that has the header and footer with will be same for all pages (it is a single page application) when routes are changed and the page contains changed the header and footer will be same for all pages.
 
-4.  To add
-
-        This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # ---------------------------------------------------------------
 
 # The project created with (npx create-react-app my-app) below is the default Readme created with the app.
