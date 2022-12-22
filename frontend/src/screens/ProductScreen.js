@@ -25,7 +25,7 @@ const ProductScreen = ({ history, match }) => {
 
   useEffect(() => {
     dispatch(listProductDetails(params.id));
-  }, [dispatch]);
+  }, [dispatch, params.id]);
 
   const navigate = useNavigate();
   const addToCartHandler = () => {

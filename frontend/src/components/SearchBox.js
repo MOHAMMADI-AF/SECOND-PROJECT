@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 
 const SearchBox = ({ history }) => {
-  const navigate = useNavigate();
   const [keyword, setKeyword] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
-      navigate(`/search/${keyword}`);
+      history.push(`/search/${keyword}`);
     } else {
-      navigate("/");
+      history.push("/");
     }
   };
 

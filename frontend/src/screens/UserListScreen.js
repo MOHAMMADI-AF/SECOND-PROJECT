@@ -26,7 +26,7 @@ const UserListScreen = ({ history }) => {
     } else {
       navigate("/login");
     }
-  }, [dispatch, history, successDelete, userInfo]); //this line to be mentioned in video
+  }, [dispatch, history, navigate, successDelete, userInfo]);
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure")) {
