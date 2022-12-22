@@ -16,13 +16,10 @@ import {
   ORDER_DELIVER_RESET,
 } from "../constants/orderConstants";
 
-
-
 const OrderScreen = ({ match }) => {
   const { id } = useParams();
   const orderId = id;
   const navigate = useNavigate();
- 
   const [sdkReady, setSdkReady] = useState(false);
 
   const dispatch = useDispatch();
