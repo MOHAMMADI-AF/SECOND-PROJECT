@@ -11,7 +11,7 @@
 - Admin Order details page
 - Mark orders as delivered option
 
-### This Project could be called MERN Stack Full Form
+### This Project could be called MERN Stack
 
     MERN Stack is a compilation of four different technologies that work together to develop dynamic web apps and websites.
 
